@@ -1,3 +1,5 @@
-*.pyc
-__pycache__/
+# Ignore configuration files containing sensitive information
+config.yaml
+
+# Ignore environment variable files
 .env
