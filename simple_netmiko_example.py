@@ -1,16 +1,17 @@
+import yaml
 from netmiko import ConnectHandler
 
-# Define the device to connect to
-# and replace every value in the device dictionary, according to your system.
+# Load the configuration file
+with open('config.yaml', 'r') as file:
+    config = yaml.safe_load(file)
 
+# Define the device to connect to using the configuration file
 device = {
-    'device_type': 'cisco_ios',  
-    'host': '192.168.1.1',       
-    'username': 'Yohan', 
-    'password': '1234', 
-    'port': 22,                  
-    'secret': 'your_secret',     
-    'verbose': True              
+    'device_type': 'cisco_ios',
+    'host': config['device']['host'],
+    'username': config['device']['username'],
+    'password': config['device']['password'],
+    'secret': config['device']['secret'],
 }
 
 # Establish an SSH connection to the device
