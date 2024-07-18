@@ -25,5 +25,24 @@ export DEVICE3_USERNAME='admin'
 export DEVICE3_PASSWORD='password'
 export DEVICE3_SECRET='secret'
 
+--------------------------------------
+
+another setup of environmental variables put in a devices_2.yaml file
+
+export DEVICE1_HOST='192.168.1.1'
+export DEVICE1_USERNAME='admin'
+export DEVICE1_PASSWORD='password'
+export DEVICE1_SECRET='secret'
+
+export DEVICE2_HOST='192.168.1.2'
+export DEVICE2_USERNAME='admin'
+export DEVICE2_PASSWORD='password'
+export DEVICE2_SECRET='secret'
+
+export DEVICE3_HOST='192.168.1.3'
+export DEVICE3_USERNAME='admin'
+export DEVICE3_PASSWORD='password'
+export DEVICE3_SECRET='secret'
+
 
 
