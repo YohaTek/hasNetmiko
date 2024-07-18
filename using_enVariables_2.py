@@ -1,13 +1,34 @@
-import yaml
+import os
 import logging
 from netmiko import ConnectHandler, NetMikoTimeoutException, NetMikoAuthenticationException
 
 # Configure logging
 logging.basicConfig(filename='netmiko_log.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s:%(message)s')
 
-# Load the configuration file
-with open('devices.yaml', 'r') as file:
-    config = yaml.safe_load(file)
+# Define the devices
+devices = [
+    {
+        'device_type': 'cisco_ios',
+        'host': os.getenv('DEVICE1_HOST'),
+        'username': os.getenv('DEVICE1_USERNAME'),
+        'password': os.getenv('DEVICE1_PASSWORD'),
+        'secret': os.getenv('DEVICE1_SECRET'),
+    },
+    {
+        'device_type': 'cisco_ios',
+        'host': os.getenv('DEVICE2_HOST'),
+        'username': os.getenv('DEVICE2_USERNAME'),
+        'password': os.getenv('DEVICE2_PASSWORD'),
+        'secret': os.getenv('DEVICE2_SECRET'),
+    },
+    {
+        'device_type': 'cisco_ios',
+        'host': os.getenv('DEVICE3_HOST'),
+        'username': os.getenv('DEVICE3_USERNAME'),
+        'password': os.getenv('DEVICE3_PASSWORD'),
+        'secret': os.getenv('DEVICE3_SECRET'),
+    },
+]
 
 # Commands to execute
 commands = ['show ip interface brief', 'show version']
@@ -27,7 +48,7 @@ def connect_and_execute(device, commands):
         return None
 
 # Execute commands on each device and log the output
-for device in config['devices']:
+for device in devices:
     output = connect_and_execute(device, commands)
     if output:
         filename = f"{device['host']}_output.txt"
