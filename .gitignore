@@ -1,8 +1,26 @@
-# Ignore configuration files containing sensitive information
+# Local device configuration files (may contain credentials)
 config.yaml
+devices.yaml
+devices_2.yaml
 
-# Ignore environment variable files
+# Environment variable files
 .env
 
-# Ignore output files
+# Generated logs and command output
+*.log
 output.txt
+*_output.txt
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

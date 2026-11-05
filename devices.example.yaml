@@ -1,0 +1,22 @@
+# Example inventory for the multi-device scripts.
+# Copy this file to devices.yaml and replace the placeholders.
+# devices.yaml is git-ignored and must never be committed.
+
+devices:
+  - device_type: cisco_ios
+    host: 192.0.2.11
+    username: admin
+    password: change-me
+    secret: change-me
+
+  - device_type: cisco_ios
+    host: 192.0.2.12
+    username: admin
+    password: change-me
+    secret: change-me
+
+  - device_type: cisco_ios
+    host: 192.0.2.13
+    username: admin
+    password: change-me
+    secret: change-me
