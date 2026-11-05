@@ -1,0 +1,9 @@
+# Example credentials for connect_single_device.py.
+# Copy this file to config.yaml and replace the placeholders.
+# config.yaml is git-ignored and must never be committed.
+
+device:
+  host: 192.0.2.10
+  username: admin
+  password: change-me
+  secret: change-me
